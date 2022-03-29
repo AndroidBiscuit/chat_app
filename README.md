@@ -1,74 +1,34 @@
 # Customized chatbox app for SOEN 390
-Faizan Ahmad (40100581)
+Faizan Ahmad (40100581) \
 Team 18
+
+# General info
+
+There is no backend to handle in this version. The messages are handled by [chatengine.io](https://chatengine.io). This will later be linked to the Django backend of our main application, once the current frontend will be integrated with the main application (in progress). The chatengine.io account is handled by Faizan.\
+\
+\
 
 # Getting Started with the chat app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Note that its important to do `npm install` if this is the first time that you will be running this application. Then just run `npm start`.\
+\
+Once the project is started, you should see the admin's view of the messages. For now, you can send and receive messages and images (not all formats are supported, may be expanded later on if needed). \
+\
+*Note that the images may appear to be cropped and there are some minor bugs in the frontend to deal with (like auto refresh of the page when a new message is added, icon placement, etc)*\
+\
 
-## Available Scripts
+## Viewing from another user's point of view and adding new users
 
-In the project directory, you can run:
+At the moment, only two users have been setup for testing purposes. You can switch between `admin` (Faizan) and `user1` (Elizabeth) by commenting/uncommenting the `userName` line in the `App.js` file. \
+\
+*Note that there can only be one user that can access this at a time. Multiple users can also access it without any issues, but it requires you to have a separate copy of this react app to be running alongside it (or on another device).*\
 
-### `npm start`
+The code for the chat app will be isolated from the rest of the main application. Just like the graphs in Sprint 2, the contents of the chat app can be updated dynamically. This includes both the user creation (handled by the API) and user views (updated dynamically based on who is currently logged in to the main application). More on that later on, during/after the integration with the main application. \
+\
+As for adding new users, this can be done dynamically with the API (more details on this later on). 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Linking sent/received messages to the notification system
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Chat Engine supports [server Rest API calls](https://chatengine.io/docs/react/v1/event_hooks#on_new_chat) and so by using event hooks in the `App.js` file, we can make an event happen whenever someone sends a new message to the recepient. This event can be a notification for the recepient (to be implemented soon, requires adding new functionality to the current main application backend). 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Linking sent/received messages to the notification system
