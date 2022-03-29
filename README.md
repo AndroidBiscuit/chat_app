@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Customized chatbox app for SOEN 390
+Faizan Ahmad (40100581)
+Team 18
+
+# Getting Started with the chat app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
