@@ -14,7 +14,7 @@ const App = () => {
 
             // Change/uncomment the username to access other users views
             // Main user
-            userName = "admin"
+            userName = "Faizan"
             
             // User1
             //userName = "user1"
